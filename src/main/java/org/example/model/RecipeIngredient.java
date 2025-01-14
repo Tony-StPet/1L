@@ -20,17 +20,50 @@ public class RecipeIngredient implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id; // Для уникальности
+    private Integer id; // Уникальный идентификатор
 
     @ManyToOne
-    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id", nullable = false)
     private Recipe recipe;
 
     @ManyToOne
-    @JoinColumn(name = "ingredient_id", referencedColumnName = "ingredient_id")
+    @JoinColumn(name = "ingredient_id", referencedColumnName = "ingredient_id", nullable = false)
     private Ingredient ingredient;
 
     @Column(name = "quantity")
-    private String quantity; // Здесь можете хранить количество или единицы измерения
+    private String quantity; // Количество или единицы измерения
+
+    // Геттеры и сеттеры
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
 }
 
