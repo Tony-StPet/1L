@@ -16,15 +16,12 @@ import java.util.Set;
 
 public class Category implements Serializable {
 
-
-
     public Category(String category_name) {
 
         this.category_name = category_name;
     }
 
-
-//    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

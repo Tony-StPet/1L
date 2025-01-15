@@ -16,12 +16,11 @@ import java.util.Set;
 @AllArgsConstructor // Конструктор со всеми параметрами
 public class Ingredient implements Serializable {
 
-//    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ingredient_id")
-    private Integer ingredientId;
+    private Integer ingredient_Id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -35,11 +34,11 @@ public class Ingredient implements Serializable {
 
     // Геттеры и сеттеры
     public int getIngredientId() {
-        return ingredientId;
+        return ingredient_Id;
     }
 
     public void setIngredientId(int ingredientId) {
-        this.ingredientId = ingredientId;
+        this.ingredient_Id = ingredientId;
     }
 
     public String getName() {

@@ -14,7 +14,7 @@ import java.io.Serializable;
 //@Data
 
 public class Recipe implements Serializable{
-//    private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
     public Recipe(String title, String description, String instructions, Category category) {
 
@@ -28,8 +28,7 @@ public class Recipe implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_id")
-    private Integer recipeId;
+    private Integer recipe_Id;
 
     @Column(name = "title", nullable = false, length = 70)
     private String title;
@@ -46,7 +45,7 @@ public class Recipe implements Serializable{
     private Category category; // Предполагается, что у вас есть класс Category для категории
 
     public Integer getRecipeId() {
-        return recipeId;
+        return recipe_Id;
     }
 
     public String getTitle() {
@@ -68,7 +67,7 @@ public class Recipe implements Serializable{
     @Override
     public String toString() {
         return "Recipe{" +
-                "recipeId=" + recipeId +
+                "recipeId=" + recipe_Id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", instructions='" + instructions + '\'' +

@@ -15,12 +15,12 @@ import java.io.Serializable;
 
 public class RecipeIngredient implements Serializable {
 
-//    private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id; // Уникальный идентификатор
+
+    private Integer recipe_ingredient_id ; // Уникальный идентификатор
 
     @ManyToOne
     @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id", nullable = false)
@@ -35,11 +35,11 @@ public class RecipeIngredient implements Serializable {
 
     // Геттеры и сеттеры
     public Integer getId() {
-        return id;
+        return recipe_ingredient_id ;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.recipe_ingredient_id = id;
     }
 
     public Recipe getRecipe() {
