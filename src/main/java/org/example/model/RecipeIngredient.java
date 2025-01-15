@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "recipe_ingredients")
+@Table(name = "recipe_ingredient")
 @Data
 @NoArgsConstructor // Конструктор без параметров для JPA
 @AllArgsConstructor // Конструктор со всеми параметрами
