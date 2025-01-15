@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class IngredientServiceImpl {
+public class IngredientServiceImpl implements IngredientService{
 
     @Autowired
     private IngredientRepository ingredientRepository;

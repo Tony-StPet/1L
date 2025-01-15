@@ -23,8 +23,9 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category add(String name) {
-        return categoryRepository.save(new Category(name));
+    public Category add(String category_name) {
+
+        return categoryRepository.save(new Category(category_name));
     }
 
     @Override
@@ -33,8 +34,12 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
+    public Category findByName(String category_name) {
+        return categoryRepository.findByCategoryName(category_name);}
+
+    @Override
     public String getCategoryNameById(Integer id) {
         Category category = categoryRepository.findByCategoryId(id);
-        return category != null ? category.getName() : null; // Возвращаем имя или null, если категория не найдена
+        return category != null ? category.getName() : "вне категорий"; // Возвращаем имя или null, если категория не найдена
     }
 }

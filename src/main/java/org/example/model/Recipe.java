@@ -1,7 +1,7 @@
 package org.example.model;
 
 import jakarta.persistence.*;
-import jdk.jfr.Category;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,13 +10,21 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "recipes")
-@Data
-@NoArgsConstructor // Конструктор без параметров для JPA
-@AllArgsConstructor // Конструктор со всеми параметрами
+@Table(name = "recipe")
+//@Data
 
 public class Recipe implements Serializable{
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
+
+    public Recipe(String title, String description, String instructions, Category category) {
+
+        this.title = title;
+        this.description = description;
+        this.instructions = instructions;
+        this.category = category;
+    }
+    public Recipe() {    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +44,35 @@ public class Recipe implements Serializable{
 
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category; // Предполагается, что у вас есть класс Category для категории
+
+    public Integer getRecipeId() {
+        return recipeId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "recipeId=" + recipeId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", instructions='" + instructions + '\'' +
+                ", category=" + category.getName() +
+                '}';
+    }
 }

@@ -10,13 +10,13 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name = "ingredients")
+@Table(name = "ingredient")
 @Data
 
 @AllArgsConstructor // Конструктор со всеми параметрами
 public class Ingredient implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
